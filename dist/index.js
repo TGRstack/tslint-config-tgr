@@ -1,109 +1,138 @@
 "use strict";
-var path = require('path');
 module.exports = {
-    rulesDirectory: [
-        path.join(path.dirname(require.resolve('tslint-consistent-codestyle')), '../node_modules/'),
-        path.join(path.dirname(require.resolve('tslint-microsoft-contrib')), '../node_modules/'),
+    extends: [
+        'tslint:recommended',
+        'tslint:latest',
+        'tslint-react'
     ],
-    // based on https://github.com/airbnb/javascript/tree/74fb34f08d4f1961169e9c37c9036a5b42aa7bf1
     rules: {
-        'prefer-const': true,
-        'no-var-keyword': true,
-        'object-literal-shorthand': true,
-        'object-shorthand-properties-first': true,
-        'object-literal-key-quotes': [true, 'as-needed'],
-        'prefer-array-literal': true,
-        quotemark: [
+        'align': [
             true,
-            'single',
-            'avoid-escape',
-            'avoid-template',
-            'jsx-double',
+            'parameters',
+            'arguments',
+            'statements'
         ],
-        'prefer-template': true,
+        'arrow-parens': [true, 'ban-single-arg-parens'],
+        'ban': false,
+        'class-name': true,
+        'comment-format': [
+            true,
+            'check-space'
+        ],
+        'curly': [true, 'ignore-same-line'],
+        'eofline': true,
+        'forin': true,
+        'indent': [true, 'spaces', 2],
+        'interface-name': [true, 'always-prefix'],
+        'jsdoc-format': true,
+        'jsx-boolean-value': false,
+        'jsx-no-lambda': false,
+        'jsx-no-multiline-js': false,
+        'jsx-wrap-multiline': false,
+        'label-position': true,
+        'max-classes-per-file': [true, 2],
+        'max-line-length': [true, 120],
+        'member-access': [false],
+        'member-ordering': [
+            true,
+            'public-before-private',
+            'static-before-instance',
+            'variables-before-functions'
+        ],
+        'no-any': true,
+        'no-arg': true,
+        'no-bitwise': true,
+        'no-consecutive-blank-lines': true,
+        'no-console': [
+            true,
+            'log',
+            // "error", // # allows console errors
+            'debug',
+            'info',
+            'time',
+            'timeEnd',
+            'trace'
+        ],
+        'no-construct': true,
+        'no-debugger': true,
+        'no-duplicate-variable': true,
+        'no-empty': true,
+        'no-empty-interface': false,
         'no-eval': true,
-        'no-function-constructor-with-string-args': true,
-        'space-before-function-paren': [
+        'no-implicit-dependencies': [true, 'dev'],
+        'no-inferrable-types': [true, 'ignore-params'],
+        // "no-import-side-effect": true, // will require an ignore every time css is imported
+        'no-shadowed-variable': true,
+        'no-string-literal': true,
+        'no-submodule-imports': [
+            true,
+            'colors',
+            'history',
+            'react-router-dom',
+            'material-ui',
+            'material-ui-icons',
+            'typeface-roboto',
+            'normalize.css'
+        ],
+        'no-switch-case-fall-through': true,
+        'no-this-assignment': [true, {
+                'allow-destructuring': true,
+                'allowed-names': ['^self$', '^record$', '^instance$']
+            }
+        ],
+        'no-trailing-whitespace': true,
+        'no-unused-expression': [true, 'allow-fast-null-checks'],
+        //  DEPRRECATED 'no-unused-variable': [true, {'ignore-pattern': '/(^_)|(^err)/'}],
+        'no-use-before-declare': true,
+        'no-var-requires': true,
+        'one-line': [
+            true,
+            'check-catch',
+            'check-else',
+            'check-open-brace',
+            'check-whitespace'
+        ],
+        'only-arrow-functions': [true, 'allow-declarations', 'allow-named-functions'],
+        'prefer-for-of': true,
+        'quotemark': [true, 'single', 'jsx-double', 'avoid-escape'],
+        'radix': true,
+        'restrict-plus-operands': true,
+        'semicolon': [true, 'never'],
+        'switch-default': true,
+        'trailing-comma': [true],
+        'triple-equals': [true, 'allow-null-check'],
+        'typedef': [
+            true,
+            'parameter',
+            'property-declaration'
+        ],
+        'typedef-whitespace': [
             true,
             {
-                anonymous: 'always',
-                named: 'never',
-            },
+                'call-signature': 'nospace',
+                'index-signature': 'nospace',
+                'parameter': 'nospace',
+                'property-declaration': 'nospace',
+                'variable-declaration': 'nospace'
+            }
         ],
-        'no-parameter-reassignment': true,
-        align: [
+        'variable-name': [
             true,
-            'arguments',
-            'parameters',
+            'ban-keywords',
+            'check-format',
+            'allow-leading-underscore',
+            'allow-snake-case',
+            'allow-pascal-case'
         ],
-        'ter-prefer-arrow-callback': [true],
-        'arrow-parens': false,
-        'ter-arrow-parens': [
-            true,
-            'as-needed',
-            { requireForBlockBody: true },
-        ],
-        'no-duplicate-imports': true,
-        'one-variable-per-declaration': [true, 'ignore-for-loop'],
-        'no-increment-decrement': true,
-        'triple-equals': [true, 'allow-null-check'],
-        'no-boolean-literal-compare': true,
-        curly: [true, 'ignore-same-line'],
-        'brace-style': [
-            true,
-            '1tbs',
-            { allowSingleLine: true },
-        ],
-        'no-else-after-return': true,
-        'comment-format': [true, 'check-space'],
-        indent: [true, 'space'],
-        'ter-indent': [
-            true,
-            2,
-            { SwitchCase: 1 },
-        ],
-        whitespace: [
+        'whitespace': [
             true,
             'check-branch',
             'check-decl',
+            'check-module',
             'check-operator',
-            'check-preblock',
             'check-separator',
-        ],
-        eofline: true,
-        'space-in-parens': [true, 'never'],
-        'array-bracket-spacing': [true, 'never'],
-        'object-curly-spacing': [true, 'always'],
-        'max-line-length': [true, 100],
-        'block-spacing': true,
-        'ter-computed-property-spacing': true,
-        'ter-func-call-spacing': true,
-        'no-trailing-whitespace': true,
-        'no-consecutive-blank-lines': true,
-        'trailing-comma': [
-            true,
-            {
-                multiline: 'always',
-                singleline: 'never',
-                esSpecCompliant: true,
-            },
-        ],
-        semicolon: [true, 'always'],
-        'no-construct': true,
-        radix: true,
-        'function-name': [
-            true,
-            {
-                'function-regex': /^[a-z$][\w\d]+$/,
-                'method-regex': /^[a-z$][\w\d]+$/,
-                'private-method-regex': /^[a-z$][\w\d]+$/,
-                'protected-method-regex': /^[a-z$][\w\d]+$/,
-                'static-method-regex': /^[a-z$][\w\d]+$/,
-            },
-        ],
-        'variable-name': [true, 'check-format'],
-        'class-name': true,
-        'no-this-assignment': [true, 'allow-destructuring'],
-        'import-name': true,
-    },
+            'check-type',
+            'check-typecast'
+        ]
+    }
 };

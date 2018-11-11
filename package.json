@@ -1,16 +1,16 @@
 {
-  "name": "tslint-config-tgr",
+  "name": "@tgrx/tslint-config-tgr",
   "description": "A TSLint config for TGRStack typescript styling",
-  "version": "5.11.0",
+  "version": "5.0.0",
   "author": "falieson",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint.fix": "tslint --fix -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
-    "tslint-consistent-codestyle": "^1.13.3",
-    "tslint-react": "3.6.0",
-    "tslint-microsoft-contrib": "~5.2.0"
+    "tslint-react": "3.6.0"
   },
   "devDependencies": {
     "@types/node": "10.12.5",

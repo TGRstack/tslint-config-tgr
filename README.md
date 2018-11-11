@@ -8,7 +8,7 @@
 ## Installation
 
 ```sh
-npm install tslint-config-tgr --save-dev
+npm i -D @tgrx/tslint-config-tgr
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ In `tslint.json`:
 
 ```json
 {
-  "extends": "tslint-config-tgr"
+  "extends": "@tgrx/tslint-config-tgr"
 }
 ```
 
@@ -40,4 +40,4 @@ x.x.x
 
 ## License
 
-Apache 2.0
+MIT
