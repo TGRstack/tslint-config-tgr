@@ -1,14 +1,14 @@
-# TSLint Config Airbnb
+# TSLint Config TGR
 
-[![NPM version](https://img.shields.io/npm/v/tslint-config-airbnb.svg?style=flat)](https://www.npmjs.com/package/tslint-config-airbnb)
-[![Downloads](http://img.shields.io/npm/dm/tslint-config-airbnb.svg?style=flat)](https://npmjs.org/package/tslint-config-airbnb)
+[![NPM version](https://img.shields.io/npm/v/tslint-config-tgr.svg?style=flat)](https://www.npmjs.com/package/tslint-config-tgr)
+[![Downloads](http://img.shields.io/npm/dm/tslint-config-tgr.svg?style=flat)](https://npmjs.org/package/tslint-config-tgr)
 
-> A [TSLint config](https://palantir.github.io/tslint/usage/configuration/) for [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+> A [TSLint config](https://palantir.github.io/tslint/usage/configuration/) for [TGR stack](https://github.com/tgrstack/)
 
 ## Installation
 
 ```sh
-npm install tslint-config-airbnb --save-dev
+npm install tslint-config-tgr --save-dev
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ In `tslint.json`:
 
 ```json
 {
-  "extends": "tslint-config-airbnb"
+  "extends": "tslint-config-tgr"
 }
 ```
 

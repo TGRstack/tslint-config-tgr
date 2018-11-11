@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = {
   rulesDirectory: [
-    path.join(path.dirname(require.resolve('tslint-consistent-codestyle')), './'),
-    path.join(path.dirname(require.resolve('tslint-eslint-rules')), 'dist/rules'),
-    path.join(path.dirname(require.resolve('tslint-microsoft-contrib')), './'),
+    path.join(path.dirname(require.resolve('tslint-consistent-codestyle')), '../node_modules/'),
+    path.join(path.dirname(require.resolve('tslint-microsoft-contrib')), '../node_modules/'),
   ],
-  rules: { // based on https://github.com/airbnb/javascript/tree/74fb34f08d4f1961169e9c37c9036a5b42aa7bf1
+  // based on https://github.com/airbnb/javascript/tree/74fb34f08d4f1961169e9c37c9036a5b42aa7bf1
+  rules: {
     'prefer-const': true, // 2.1, 13.1
     'no-var-keyword': true, // 2.2
     'object-literal-shorthand': true, // 3.3, 3.4
@@ -41,7 +41,7 @@ module.exports = {
     'ter-arrow-parens': [
       true,
       'as-needed',
-      { 'requireForBlockBody': true },
+      { requireForBlockBody: true },
     ], // 8.4
     'no-duplicate-imports': true, // 10.4
     'one-variable-per-declaration': [true, 'ignore-for-loop'], // 13.2
@@ -60,7 +60,7 @@ module.exports = {
     'ter-indent': [
       true,
       2,
-      { 'SwitchCase': 1 },
+      { SwitchCase: 1 },
     ], // 19.1
     whitespace: [
       true,
